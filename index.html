@@ -1,0 +1,90 @@
+		<div class="question-group">			
+				<h3>2. This first grade student has slight issues with phonology. This can be seen with the misspellings:</h3> 
+					<div class="choice" id="q2">
+						<span>A. there as “thar”</span>
+						<span>B. kitten as “citin”</span>
+						<span class="correct">C. pet as “pat”</span>
+						<span>D. my as “mi”</span>
+					</div>
+					<div id="ans2" style="display: none"></div>
+					<br/> 
+      </div>	
+      <sytle>h3{
+  font-family: 'Oswald', sans-serif;
+  background-color: transparent;
+  color: rgb(65,47,143);
+  text-shadow: 1px 1px 1px rgb(255,255,255);
+}
+.choice span{
+	font-family:arial;
+	font-size:20px;
+	display:block;
+	margin-bottom:2px;
+	padding:2px 2px 2px 10px;
+	border:2px solid transparent;
+}
+.question-group {	
+		color:#000;
+		border:1px solid #ccc;
+		padding:10px;
+		font-weight:normal;
+		background-color:#fff;
+		clear: both;
+	}
+
+.question-group span:hover{
+	cursor:pointer;
+	border:2px solid #ccc;
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	-o-border-radius:10px;
+	border-radius:10px;
+}
+
+.green{
+	background-color: #00cd00;
+	opacity:0.9;
+}
+.red{
+	background-color: red;
+	opacity:0.9;
+}
+.radius{
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	-o-border-radius:10px;
+	border-radius:10px;
+}
+
+textarea {
+	width: 680px; 
+	height: 100px;
+    min-width: 680px; 
+    min-height: 100px;
+    max-width: 680px; 
+    max-height: 100px;
+}
+
+
+	#ans2 {
+		background:#e5ffe5;
+		line-height:30px;
+		margin-top:3px;
+		padding: 10px;
+		border-top: 1px solid #00CC00;
+		border-bottom: 1px solid #00CC00;		
+	}</sytle>
+ <script>$("#q2 span").click(function(){
+		if($(this).attr('class') =='correct' || $(this).attr('class') =='correct green radius' ){
+			$( this ).addClass("green radius");
+		}else{
+			$( this ).addClass("red radius").delay(5000).queue(function(){
+				$(this).removeClass("red radius", 2000);
+				$(this).dequeue();
+			});
+		};
+			$("#ans2").html("The correct answer is <b>pet as “pat”</b>. <br />The vowel sound /a/ is close in articulation to the sound /e/ and is often confused.");
+			$("#ans2").slideDown(300);
+	});
+	
+</script>
